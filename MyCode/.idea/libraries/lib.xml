@@ -1,0 +1,28 @@
+<component name="libraryTable">
+  <library name="lib">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../code/spring-framework-3.2.17.RELEASE-mlgg/lib/spring-tx-3.2.18.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../code/spring-framework-3.2.17.RELEASE-mlgg/lib/spring-aspects-3.2.18.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../code/spring-framework-3.2.17.RELEASE-mlgg/lib/spring-jms-3.2.18.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../code/spring-framework-3.2.17.RELEASE-mlgg/lib/spring-oxm-3.2.18.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../code/spring-framework-3.2.17.RELEASE-mlgg/lib/spring-jdbc-3.2.18.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../code/spring-framework-3.2.17.RELEASE-mlgg/lib/hamcrest-core-1.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../code/spring-framework-3.2.17.RELEASE-mlgg/lib/spring-context-support-3.2.18.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../code/spring-framework-3.2.17.RELEASE-mlgg/lib/spring-orm-3.2.18.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../code/spring-framework-3.2.17.RELEASE-mlgg/lib/spring-core-3.2.18.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../code/spring-framework-3.2.17.RELEASE-mlgg/lib/spring-data-jpa-2.2.0.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../code/spring-framework-3.2.17.RELEASE-mlgg/lib/spring-context-3.2.18.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../code/spring-framework-3.2.17.RELEASE-mlgg/lib/spring-instrument-3.2.18.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../code/spring-framework-3.2.17.RELEASE-mlgg/lib/junit-4.12.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../code/spring-framework-3.2.17.RELEASE-mlgg/lib/spring-test-3.2.18.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../code/spring-framework-3.2.17.RELEASE-mlgg/lib/commons-logging-1.1.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../code/spring-framework-3.2.17.RELEASE-mlgg/lib/spring-beans-3.2.18.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../code/spring-framework-3.2.17.RELEASE-mlgg/lib/spring-instrument-tomcat-3.2.18.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../code/spring-framework-3.2.17.RELEASE-mlgg/lib/spring-expression-3.2.18.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../code/spring-framework-3.2.17.RELEASE-mlgg/lib/aopalliance-1.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../code/spring-framework-3.2.17.RELEASE-mlgg/lib/spring-aop-3.2.18.RELEASE.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
