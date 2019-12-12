@@ -6,15 +6,19 @@ import org.junit.Test;
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.FilenameFilter;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.PrintWriter;
 import java.util.zip.GZIPInputStream;
 
 /**
@@ -26,7 +30,7 @@ import java.util.zip.GZIPInputStream;
  */
 public class IOTest {
 
-    private final static String SANZIJING_PATH = "E:\\mlgg\\src\\main\\resources\\file\\三字经.txt";
+    private final static String SANZIJING_PATH = "E:\\MyCode\\mlgg\\src\\main\\resources\\file\\三字经.txt";
     private final static String MANANDCAT_PATH = "E:\\mlgg\\src\\main\\resources\\file\\The Old Man and the Old Cat.txt";
     private final static String NUMBER_PATH = "E:\\mlgg\\src\\main\\resources\\file\\number.txt";
     private final static String FILE_PATH = "E:\\mlgg\\src\\main\\resources\\file";
@@ -113,8 +117,8 @@ public class IOTest {
         DataInputStream in = null;
         DataOutputStream out = null;
         try{
-            in = new DataInputStream(new BufferedInputStream(new FileInputStream(MANANDCAT_PATH)));
-            out = new DataOutputStream(new BufferedOutputStream(new FileOutputStream("E:\\mlgg\\src\\test\\java\\com\\mlgg\\thinkInJava\\TOMATOCtest5.txt")));
+            in = new DataInputStream(new BufferedInputStream(new FileInputStream(SANZIJING_PATH)));
+            out = new DataOutputStream(new BufferedOutputStream(new FileOutputStream("E:\\MyCode\\mlgg\\src\\test\\java\\com\\mlgg\\thinkInJava\\TOMATOCtest5.txt")));
             while ((in.available()) != 0) {
                 System.out.print((char) in.readByte());
             }
@@ -214,6 +218,24 @@ public class IOTest {
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
+            }
+        }
+    }
+
+    @Test
+    public void test10() throws IOException {
+        File file=new File("f:/a.txt");
+        BufferedWriter bw=null;
+        try {
+            bw=new BufferedWriter(new FileWriter(file,true));
+            bw.write("000");
+            bw.flush();
+            bw.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            if(bw!=null) {
+                bw.close();
             }
         }
     }
