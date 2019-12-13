@@ -1,6 +1,11 @@
 package com.mlgg.springboot.req;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
+import com.fasterxml.jackson.databind.util.JSONPObject;
+import com.mlgg.springboot.utils.StringUtils;
 import lombok.Data;
+import org.omg.CORBA.ObjectHelper;
 
 /**
  * <Description> <br>
@@ -47,11 +52,8 @@ public class UserRequest {
         this.email = email;
     }
 
-    @Override
-    public String toString() {
-        return "username='" + username + '\'' +
-                ", password='" + password + '\'' +
-                ", age=" + age +
-                ", email='" + email + '\'' ;
+
+    public String toJsonString() {
+        return JSON.toJSONString(this);
     }
 }
