@@ -1,7 +1,6 @@
 package com.mlgg.springboot.service;
 
 import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONObject;
 import com.google.common.base.Strings;
 import com.google.common.collect.Lists;
 import com.mlgg.springboot.req.UserRequest;
@@ -9,11 +8,8 @@ import com.mlgg.springboot.res.UserResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpServletResponseWrapper;
 import java.io.*;
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -53,7 +49,7 @@ public class UserService {
                 String str = "";
                 List<UserResponse> allUserJsonList = Lists.newArrayList();
                 while ((str = br.readLine()) != null) {
-                    allUserJsonList.add((UserResponse) JSON.parseObject(str).toJavaObject(UserResponse.class));
+                    allUserJsonList.add(JSON.parseObject(str).toJavaObject(UserResponse.class));
                 }
                 return allUserJsonList;
             }catch (Exception e) {
