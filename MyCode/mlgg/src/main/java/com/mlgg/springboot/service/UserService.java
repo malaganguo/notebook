@@ -1,14 +1,16 @@
 package com.mlgg.springboot.service;
 
+import com.alibaba.fastjson.JSON;
 import com.google.common.base.Strings;
+import com.google.common.collect.Lists;
 import com.mlgg.springboot.req.UserRequest;
+import com.mlgg.springboot.res.UserResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
+import java.io.*;
 import java.net.URL;
+import java.util.List;
 
 /**
  * <Description> <br>
@@ -22,10 +24,10 @@ import java.net.URL;
 public class UserService {
     private static String USER_FILE_NAME = "file/user.txt";
 
-    public Integer AddUser(UserRequest userRequest) throws Exception {
+    public Integer addUser(UserRequest userRequest) throws Exception {
         if(!Strings.isNullOrEmpty(userRequest.getUsername())) {
             try(BufferedWriter br = new BufferedWriter(new FileWriter(getFile(USER_FILE_NAME),true))) {
-                br.write(userRequest.toString());
+                br.write(userRequest.toJsonString());
                 br.newLine();
                 br.flush();
                 return 1;
@@ -37,6 +39,26 @@ public class UserService {
             throw new Exception("username is empty!");
         }
 
+    }
+
+    public List<UserResponse> getAllUserFromFile() throws Exception {
+        if(getFile(USER_FILE_NAME).exists() && getFile(USER_FILE_NAME).length() != 0) {
+            try(
+                    BufferedReader br = new BufferedReader(new FileReader(getFile(USER_FILE_NAME)));
+                    ){
+                String str = "";
+                List<UserResponse> allUserJsonList = Lists.newArrayList();
+                while ((str = br.readLine()) != null) {
+                    allUserJsonList.add(JSON.parseObject(str).toJavaObject(UserResponse.class));
+                }
+                return allUserJsonList;
+            }catch (Exception e) {
+                /*log.error("get all user error,reason is {}", e.getMessage());
+                throw new Exception("get all user error");*/
+                e.printStackTrace();
+            }
+        }
+        return null;
     }
 
 

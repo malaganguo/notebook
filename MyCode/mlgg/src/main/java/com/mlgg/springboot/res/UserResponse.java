@@ -12,6 +12,8 @@ import lombok.Data;
 @Data
 public class UserResponse {
 
+    public UserResponse(){}
+
     private String username;
     private String password;
     private Integer age;
